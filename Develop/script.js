@@ -1,16 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 // declare variables using array
-const UpperCase_Char_Codes=arrayFromLowtoHigh(65,90)
-const LowerCase_Char_Codes=arrayFromLowtoHigh(97,122)
-const Number_Char_Codes=arrayFromLowtoHigh(48,57)
-const Special_Char_Codes=arrayFromLowtoHigh(33,47).concat(
-  arrayFromLowtoHigh(58,64)
-).concat(
-  arrayFromLowtoHigh (91,96)
-).concat (
-  arrayFromLowtoHigh(123.126)
-)
+let lowerCharacter = "abcdefghijklmnopqrstuvwxyz";
+let upperCharacter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let numberCharacter = "0123456789";
+let specialCharacter = "@#$%^&*()_+[]<>?{}-=/";
+let combinedCharacterArray=[]
 
 // Write password to the #password input
 function writePassword() {
@@ -22,53 +17,59 @@ function writePassword() {
 }
 //Generate Criteria
 function generatePassword(){
-  let length= prompt('How long do you require your password to be?');
+  let lengthPrompt= prompt('How long do you require your password to be?');
+  if (lengthPrompt < 8 || lengthPrompt > 128){
+    alert ('Please enter a number between 8-128');
+  } else {
   let lowerCasePrompt=confirm('Do you want to include lowercase?');
   let upperCasePrompt=confirm('Do you want to include uppercase?');
+  let numbersPrompt=confirm('Do you want to include number?');
   let specialCasePrompt=confirm(' Do you want to include special characters?');
-/*Return Criteria
+
+  //Return Criteria
   return passwordCriteria (
-    length,lowerCasePrompt,upperCasePrompt,specialCasePrompt
-  )*/
-
-  //if statement for min length character
-/* if ( length>=8 && length<=128){
-    return length,lowerCasePrompt,upperCasePrompt,specialCasePrompt
-  } else {
-    alert ('Please Try Again');*/
-
-var superCharacterArray=[]
-if (lowerCasePrompt === true ){
-  var superCharacter= superCharacterArray.concat(LowerCase_Char_Codes)
-} /*(upperCasePrompt === true){
-  superCharacter=superCharacterArray.concat(UpperCase_Char_Codes)
-}*/
-console.log(superCharacter);
-
+    lengthPrompt,lowerCasePrompt,upperCasePrompt,specialCasePrompt,numbersPrompt
+  );
   }
 
-//loop through total number of characters
-function arrayFromLowtoHigh(low,high){
+// create for loop through total number of characters
+/*function {
   const array=[]
-  for(let i=low; i <=high; i++){
+  for(let i=0; i <=??; i++){
     var character= String.fromCharCode(i)
     array.push (character)
   }
+
   return array
+}*/
+if (lowerCasePrompt === true ){
+  //add an lowercase letter to the password 
+  // add the lower case array to the superarray
+   let superArray=combinedCharacterArray.concat(lowerCharacter)
+} if (upperCasePrompt === true){
+  superArray =combinedCharacterArray.concat(upperCharacter)
+}if (specialCasePrompt === true){
+  superArray=combinedCharacterArray.concat(specialCharacter)
+}if (numbersPrompt === true){
+  superArray=combinedCharacterArray.concat(numberCharacter)
 }
+console.log(superArray);
+console.log ('hi');
+}
+
 
 //Ability to generate Random Number
 function randomLowerChar() {
-  return LowerCase_Char_Codes.charAt(Math.floor(Math.random() * LowerCase_Char_Codes.length));
+  return lowerCharacter.charAt(Math.floor(Math.random() * lowerCharacter.length));
 }
 function randomUpperChar() {
-  return UpperCase_Char_Codes.charAt(Math.floor(Math.random() * UpperCase_Char_Codes.length));
+  return upperCharacter.charAt(Math.floor(Math.random() * upperCharacter.length));
 }
 function randomNumChar() {
-  return Number_Char_Codes.charAt(Math.floor(Math.random() * Number_Char_Codes.length));
+  return numberCharacter.charAt(Math.floor(Math.random() * numberCharacter.length));
 }
 function randomSpecialChar() {
-  return Special_Char_Codes.charAt(Math.floor(Math.random() * UpperCase_Char_Codes.length));
+  return specialCharacter.charAt(Math.floor(Math.random() * specialCharacter.length));
 }
 
 
