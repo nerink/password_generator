@@ -1,11 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// declare variables using array
-let lowerCharacter = "abcdefghijklmnopqrstuvwxyz";
-let upperCharacter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let numberCharacter = "0123456789";
-let specialCharacter = "@#$%^&*()_+[]<>?{}-=/";
-let combinedCharacterArray=[]
 
 // Write password to the #password input
 function writePassword() {
@@ -15,6 +9,12 @@ function writePassword() {
   passwordText.value = password;
 
 }
+// declare variables using array
+let lowerCharacter = "abcdefghijklmnopqrstuvwxyz";
+let upperCharacter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let numberCharacter = "0123456789";
+let specialCharacter = "@#$%^&*()_+[]<>?{}-=/";
+
 //Generate Criteria
 function generatePassword(){
   let lengthPrompt= prompt('How long do you require your password to be?');
@@ -31,33 +31,23 @@ function generatePassword(){
     lengthPrompt,lowerCasePrompt,upperCasePrompt,specialCasePrompt,numbersPrompt
   );
   }
-
-// create for loop through total number of characters
-/*function {
-  const array=[]
-  for(let i=0; i <=??; i++){
-    var character= String.fromCharCode(i)
-    array.push (character)
+  // Created input for the password 
+  function passwordCriteria (lowerCasePrompt,lengthPrompt,upperCasePrompt,numbersPrompt,specialCasePrompt){
+    let pwd='';
+  // create for loop through total number of characters
+  for(let i=0; i <=lengthPrompt; i++){
+    if (lowerCasePrompt === true ){
+      pwd += randomLowerChar;
+    } if (upperCasePrompt === true){
+      pwd += randomUpperChar;
+    }if (specialCasePrompt === true){
+      pwd += randomSpecialChar;
+    }if (numbersPrompt === true){
+      pwd += randomNumChar;
+    }
   }
-
-  return array
-}*/
-if (lowerCasePrompt === true ){
-  //add an lowercase letter to the password 
-  // add the lower case array to the superarray
-   let superArray=combinedCharacterArray.concat(lowerCharacter)
-} if (upperCasePrompt === true){
-  superArray =combinedCharacterArray.concat(upperCharacter)
-}if (specialCasePrompt === true){
-  superArray=combinedCharacterArray.concat(specialCharacter)
-}if (numbersPrompt === true){
-  superArray=combinedCharacterArray.concat(numberCharacter)
-}
-console.log(superArray);
-console.log ('hi');
-}
-
-
+  return pwd
+  }
 //Ability to generate Random Number
 function randomLowerChar() {
   return lowerCharacter.charAt(Math.floor(Math.random() * lowerCharacter.length));
@@ -72,6 +62,8 @@ function randomSpecialChar() {
   return specialCharacter.charAt(Math.floor(Math.random() * specialCharacter.length));
 }
 
-
+}
+    
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
