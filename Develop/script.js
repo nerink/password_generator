@@ -37,13 +37,13 @@ function generatePassword(){
   // create for loop through total number of characters
   for(let i=0; i <=lengthPrompt; i++){
     if (lowerCasePrompt === true ){
-      pwd += randomLowerChar;
+      pwd += randomLowerChar();
     } if (upperCasePrompt === true){
-      pwd += randomUpperChar;
+      pwd += randomUpperChar();
     }if (specialCasePrompt === true){
-      pwd += randomSpecialChar;
+      pwd += randomSpecialChar();
     }if (numbersPrompt === true){
-      pwd += randomNumChar;
+      pwd += randomNumChar();
     }
   }
   return pwd
