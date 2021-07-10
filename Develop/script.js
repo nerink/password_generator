@@ -26,24 +26,32 @@ function generatePassword(){
   let numbersPrompt=confirm('Do you want to include number?');
   let specialCasePrompt=confirm(' Do you want to include special characters?');
 
-  //Return Criteria
+  /*Return Criteria- Unnecessary 
   return passwordCriteria (
     lengthPrompt,lowerCasePrompt,upperCasePrompt,specialCasePrompt,numbersPrompt
-  );
+  );*/
+
   }
   // Created input for the password 
-  function passwordCriteria (lowerCasePrompt,lengthPrompt,upperCasePrompt,numbersPrompt,specialCasePrompt){
+  function passwordCriteria (lengthPrompt,lowerCasePrompt,upperCasePrompt,numbersPrompt,specialCasePrompt){
     let pwd='';
+  // Create new integar which can define how many character have currently been used
+    let usedCharacter =0;
   // create for loop through total number of characters
   for(let i=0; i <=lengthPrompt; i++){
-    if (lowerCasePrompt === true ){
+    //check to see if the criteria is true & to confirm we dont use more character than specified by the user
+    if (lowerCasePrompt === true && usedCharacter< lengthPrompt ){
       pwd += randomLowerChar();
-    } if (upperCasePrompt === true){
+      usedCharacter++;
+    } if (upperCasePrompt === true && usedCharacter< lengthPrompt){
       pwd += randomUpperChar();
-    }if (specialCasePrompt === true){
+      usedCharacter++;
+    }if (specialCasePrompt === true && usedCharacter< lengthPrompt){
       pwd += randomSpecialChar();
-    }if (numbersPrompt === true){
+      usedCharacter++;
+    }if (numbersPrompt === true && usedCharacter< lengthPrompt){
       pwd += randomNumChar();
+      usedCharacter++;
     }
   }
   return pwd
