@@ -32,7 +32,7 @@ function generatePassword(){
   );*/
 
   }
-  // Created input for the password 
+  // Create input for the password 
   function passwordCriteria (lengthPrompt,lowerCasePrompt,upperCasePrompt,numbersPrompt,specialCasePrompt){
     let pwd='';
   // Create new integar which can define how many character have currently been used
