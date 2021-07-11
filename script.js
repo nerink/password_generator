@@ -26,10 +26,10 @@ function generatePassword(){
   let numbersPrompt=confirm('Do you want to include number?');
   let specialCasePrompt=confirm(' Do you want to include special characters?');
 
-  /*Return Criteria- Unnecessary 
+  //Return Criteria
   return passwordCriteria (
     lengthPrompt,lowerCasePrompt,upperCasePrompt,specialCasePrompt,numbersPrompt
-  );*/
+  );
 
   }
   // Create input for the password 

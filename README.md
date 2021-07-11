@@ -10,4 +10,6 @@ Length
 Length is between 8-128 characters. 
 
 ## Website
+https://nerink.github.io/password_generator/ 
 
+Repo Link: https://github.com/nerink/password_generator 
