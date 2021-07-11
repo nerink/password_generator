@@ -39,7 +39,7 @@ function generatePassword(){
     let usedCharacter =0;
   // create for loop through total number of characters
   for(let i=0; i <=lengthPrompt; i++){
-    //check to see if the criteria is true & to confirm we dont use more character than specified by the user
+  //check to see if the criteria is true & to confirm we dont use more character than specified by the user
     if (lowerCasePrompt === true && usedCharacter< lengthPrompt ){
       pwd += randomLowerChar();
       usedCharacter++;
