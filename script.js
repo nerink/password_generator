@@ -9,7 +9,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
-// declare variables using array
+// declare variables 
 let lowerCharacter = "abcdefghijklmnopqrstuvwxyz";
 let upperCharacter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let numberCharacter = "0123456789";
